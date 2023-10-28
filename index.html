@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Baristasho</title>
+   
+
+
+
+    <link rel="stylesheet" href="styles/menu.css" />
+    <link rel="stylesheet" href="styles/navbar.css" />
+    <link rel="stylesheet" href="styles/slider.css" />
+    <link rel="stylesheet" href="styles/categories.css" />
+    <link rel="stylesheet" href="styles/products.css" />
+    <link rel="stylesheet" href="styles/footer.css" />
+  </head>
+  <script
+    src="https://kit.fontawesome.com/ec40fb21e9.js"
+    crossorigin="anonymous"
+  ></script>
+
+  <body>
+    <div class="navbar">
+      <div onclick="openMenu()" class="menu">
+        <span class="line line1"></span>
+        <span class="line line2"></span>
+        <span class="line line3"></span>
+      </div>
+      <div class="logo"><img src="./pics/logo.png" alt=""></div>
+      <i class="profile fa fa-solid fa-user"></i>
+    </div>
+    <div id="hambergurMenu" class="hambergurMenu">
+      <div class="closeMenu">
+        <img
+          onclick="closeMenu()"
+          id="menuClose"
+          class="closeimg"
+          src="pics/icons/close.png"
+          alt=""
+        />
+      </div>
+      <div class="items">رست قهوه</div>
+      <div class="items">طعم قهوه</div>
+      <div class="items">دانه ی قهوه</div>
+    </div>
+    <div class="slider">
+      <div id="slides" class="slides">
+        <div class="slide slide1">
+          <h1 class="title">آفوگاتو</h1>
+          <img src="./pics/affogato.jpg" alt="img1" />
+        </div>
+        <div class="slide slide2">
+          <h1 class="title">لاته</h1>
+          <img src="./pics/latte.jpg" alt="img1" />
+        </div>
+        <div class="slide slide3">
+          <h1 class="title">موکا</h1>
+          <img src="./pics/mocha.jpg" alt="img1" />
+        </div>
+        <div class="slide slide4">
+          <h1 class="title">اسپرسو</h1>
+          <img src="./pics/spresso.jpg" alt="img1" />
+        </div>
+      </div>
+      <button onclick="sliderRightMove()" class="btn btnright">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+      <button onclick="sliderLeftMove()" class="btn btnleft">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+    </div>
+    <div class="catagories">
+      <div class="tholder">
+        <div class="line"></div>
+        <h1 class="title">کتگوری های برتر</h1>
+        <div class="line"></div>
+      </div>
+
+      <div class="container">
+        <div class="cat cat1">
+          <img src="./pics/dane.jpg" alt="" />
+          <div class="layer"></div>
+          <h1 class="title">انواع دانه های قهوه</h1>
+          <div class="line"></div>
+          <button class="btn">نمایش بیشتر</button>
+        </div>
+        <div class="cat cat2">
+          <img src="./pics/roast.jpg" alt="" />
+          <div class="layer"></div>
+          <h1 class="title">انواع رست قهوه</h1>
+          <div class="line"></div>
+          <button class="btn">نمایش بیشتر</button>
+        </div>
+        <div class="cat cat3">
+          <img src="./pics/dam.jpg" alt="" />
+          <div class="layer"></div>
+          <h1 class="title">انواع دم آوری قهوه</h1>
+          <div class="line"></div>
+          <button class="btn">نمایش بیشتر</button>
+        </div>
+      </div>
+    </div>
+    <div class="products">
+      <h1 class="title">آموزش نوشیدنی ها بر پایه قهوه</h1>
+      <div class="container">
+        <div class="product">
+          <img src="./pics/americano 2 .webp" alt="" />
+          <div class="layer"></div>
+          <div class="title">امریکانو</div>
+        </div>
+        <div class="product">
+          <img src="./pics/affogato2.webp" alt="" />
+          <div class="layer"></div>
+          <div class="title">آفوگاتو</div>
+        </div>
+        <div class="product">
+          <img src="./pics/latte2.jpg" alt="" />
+          <div class="layer"></div>
+          <div class="title">لاته</div>
+        </div>
+        <div class="product">
+          <img src="./pics/mocha.jpg" alt="" />
+          <div class="layer"></div>
+          <div class="title">موکا</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="flogo"><img src="./pics/logo.png" alt=""></div>
+      <div class="links">
+        <h1> با ما در ارتباط باشید</h1>
+        <a href="/" class="link link1">درباره ما</a>
+        <a href="/" class="link link1">فروشگاه </a>
+        <a href="/" class="link link1">خانه</a>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script>
+  const openMenu = () => {
+    console.log("here");
+    document.getElementById("hambergurMenu").className = "hambergurMenu show";
+  };
+  const closeMenu = () => {
+    document.getElementById("hambergurMenu").className = "hambergurMenu";
+  };
+  var slidePosition = 0;
+  const sliderLeftMove = () => {
+    if (slidePosition == -300) {
+      slidePosition = 0;
+      document.getElementById("slides").style.right =
+        slidePosition.toString() + "vw";
+      return;
+    }
+    slidePosition -= 100;
+    document.getElementById("slides").style.right =
+      slidePosition.toString() + "vw";
+  };
+  const sliderRightMove = () => {
+    if (slidePosition == 0) {
+      slidePosition = -300;
+      document.getElementById("slides").style.right =
+        slidePosition.toString() + "vw";
+      return;
+    }
+    slidePosition += 100;
+    document.getElementById("slides").style.right =
+      slidePosition.toString() + "vw";
+  };
+</script>

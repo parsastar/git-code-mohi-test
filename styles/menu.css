@@ -1,0 +1,105 @@
+.hambergurMenu {
+  width: 300px;
+  top: 0;
+  height: 100vh;
+  background-color: rgb(249, 249, 249);
+  position: fixed;
+  left: -100%;
+  z-index: 200;
+  display: flex;
+  font-family: iransans;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  box-shadow: 0px 10px 10px 10px rgba(0, 0, 0, 0.058);
+  transition: 2s;
+}
+.hambergurMenu.show {
+  left: 0;
+  transition: 1s;
+}
+
+.hambergurMenu > .items {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 70px;
+  text-align: center;
+  font-size: 18px;
+  align-items: center;
+  color: #532b23;
+  box-shadow: 0px -0px 0px 0px rgba(0, 0, 0, 0);
+  transition: 0.5s;
+}
+
+.hambergurMenu > .items:hover {
+  box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.039);
+  background-color: rgb(255, 255, 255);
+  cursor: pointer;
+  font-size: 19px;
+  transition: 0.5s;
+}
+
+.hambergurMenu > .closeMenu {
+  display: flex;
+
+  height: 70px;
+
+  justify-content: end;
+  align-items: center;
+}
+.closeimg {
+  right: 10px;
+
+  position: absolute;
+  transform: rotate(0);
+  padding: 5px;
+  width: 40px;
+  transition: 0.5s;
+  height: 40px;
+}
+
+.closeimg:hover {
+  transform: rotate(90deg);
+  transition: 0.3s;
+}
+
+.hambergurMenu > .closeMenu > .title {
+  position: absolute;
+
+  left: 10px;
+  font-size: 30px;
+}
+
+@media screen {
+}
+
+@media only screen and (max-width: 600px) {
+  .hambergurMenu {
+    width: 200px;
+  }
+
+  .hambergurMenu > .items {
+    height: 60px;
+
+    font-size: 15px;
+  }
+
+  .hambergurMenu > .items:hover {
+    height: 60px;
+
+    font-size: 16px;
+  }
+
+  .hambergurMenu > .closeMenu {
+    height: 60px;
+  }
+
+  .closeimg {
+    right: 10px;
+
+    width: 30px;
+
+    height: 30px;
+  }
+}
